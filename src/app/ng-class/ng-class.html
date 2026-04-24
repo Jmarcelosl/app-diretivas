@@ -1,1 +1,7 @@
-<p>ng-class works!</p>
+<br>
+<h1 [ngClass]="{'preto': valor, 'amarelo': !valor}">Exemplo ngClass - Troca a classe ao clicar nos botões</h1>
+<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+  <button type="button" class="btn btn-dark" (click)="valor = true">Preto</button>
+  
+  <button type="button" class="btn btn-warning" (click)="valor = false">Amarelo</button>
+</div>
