@@ -1,1 +1,9 @@
-<p>ng-if works!</p>
+<h1>Exemplo ngIf</h1>
+
+<button (click)="clickAmarelo()" class="btn btn-primary mr-3">Amarelo</button>
+<button (click)="clickVermelho()" class="btn btn-primary mr-3">Vermelho</button>
+
+<div class="containerPai">
+    <div *ngIf="containerAmarelo" class="divAmarelo"></div>
+    <div *ngIf="containerVermelho" class="divVermelho"></div>
+</div>

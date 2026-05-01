@@ -1,0 +1,24 @@
+.divAmarelo {
+    background-color: yellow;
+    width: 300px;
+    height: 300px;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 15px;
+    margin: 5px;
+}
+
+.divVermelho {
+    background-color: red;
+    width: 300px;
+    height: 300px;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 15px;
+    margin: 5px;
+}
+
+.containerPai {
+    display: flex;
+    align-content: space-between;
+}
