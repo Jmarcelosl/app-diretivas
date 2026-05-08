@@ -14,7 +14,4 @@ export class CpFilho2 {
     let numero = Math.floor(Math.random() * 100 + 1);
     this.emiteEventoPai.emit(numero);
   }
-
-
-
 }
