@@ -1,0 +1,38 @@
+<div class="container mt-5">
+  <div class="microwave-panel card p-4 shadow-lg mx-auto bg-dark border-secondary">
+    
+    <div class="display-screen bg-black text-success rounded mb-4 p-3 text-end fw-bold font-monospace shadow-inner">
+      <span [class.blink]="isRunning">{{ displayTime }}</span>
+    </div>
+
+    <div class="row g-2 mb-3">
+      <div class="col-4" *ngFor="let num of [1,2,3,4,5,6,7,8,9]">
+        <button class="btn btn-secondary w-100 py-3 fs-5" (click)="pressKey(num.toString())">
+          {{ num }}
+        </button>
+      </div>
+      
+      <div class="col-4">
+        </div>
+      <div class="col-4">
+        <button class="btn btn-secondary w-100 py-3 fs-5" (click)="pressKey('0')">0</button>
+      </div>
+      <div class="col-4">
+      </div>
+    </div>
+
+    <div class="row g-2">
+      <div class="col-6">
+        <button class="btn btn-danger w-100 py-3 fw-bold" (click)="stop()">
+          Parar<br><small>Cancelar</small>
+        </button>
+      </div>
+      <div class="col-6">
+        <button class="btn btn-success w-100 py-3 fw-bold" (click)="start()">
+          Iniciar<br><small>+30s</small>
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
