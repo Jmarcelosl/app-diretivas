@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-microondas',
@@ -6,6 +6,8 @@ import { Component, OnDestroy } from '@angular/core';
   styleUrls: ['./microondas.scss']
 })
 export class Microondas implements OnDestroy {
+  constructor(private cdr: ChangeDetectorRef){}
+  
   inputDigits: string = '';
   displayTime: string = '00:00';
   totalSeconds: number = 0;
@@ -42,6 +44,7 @@ export class Microondas implements OnDestroy {
     const minsStr = mins.toString().padStart(2, '0');
     const secsStr = secs.toString().padStart(2, '0');
     this.displayTime = `${minsStr}:${secsStr}`;
+    this.cdr.detectChanges();
   }
 
   start() {

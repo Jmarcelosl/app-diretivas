@@ -1,0 +1,7 @@
+<div class="card">
+      <img [src]="produto.imageUrl" alt="Imagem do produto" width="150" />
+      <h2>{{ produto.name }}</h2>
+      <p>Categoria: {{ produto.category }}</p>
+      
+      <h3>{{ produto.price | currency:'BRL':'symbol' }}</h3>
+    </div>

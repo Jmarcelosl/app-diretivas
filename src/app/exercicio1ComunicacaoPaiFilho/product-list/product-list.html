@@ -1,0 +1,24 @@
+<div class="loja-container">
+      
+      <div class="lista">
+        <h2>Nossos Produtos</h2>
+        <ul>
+          @for (item of listaDeProdutos; track item.id) {
+            <li (click)="selecionarProduto(item)">
+              {{ item.name }}
+            </li>
+          }
+        </ul>
+      </div>
+
+      <div class="detalhes">
+        @if (produtoEscolhido) {
+          
+          <app-product-card [produto]="produtoEscolhido"></app-product-card>
+          
+        } @else {
+          <p>Clique em um produto ao lado para ver os detalhes.</p>
+        }
+      </div>
+
+    </div>

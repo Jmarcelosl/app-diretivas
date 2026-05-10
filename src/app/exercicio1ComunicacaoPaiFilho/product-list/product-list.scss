@@ -1,0 +1,5 @@
+.loja-container { display: flex; gap: 40px; padding: 20px; }
+    .lista { width: 30%; }
+    .detalhes { width: 70%; }
+    li { cursor: pointer; padding: 10px; border-bottom: 1px solid #eee; }
+    li:hover { background-color: #f0f0f0; }
