@@ -12,6 +12,9 @@ import { CpPai2 } from './modulo-teste-2/cp-pai-2/cp-pai-2';
 import { CpAgrupador } from './md-service/cp-agrupador/cp-agrupador';
 import { ProductCard } from './exercicio1ComunicacaoPaiFilho/product-card/product-card';
 import { ProductList } from './exercicio1ComunicacaoPaiFilho/product-list/product-list';
+import { EstoqueComponent } from './estoque/estoque-component/estoque-component';
+import { ItemRegistrationComponent } from './estoque/item-registration-component/item-registration-component';
+import { ItemListComponent } from './estoque/item-list-component/item-list-component';
 
 export const routes: Routes = [
     {path:"ng-class", component:NgClass},
@@ -26,6 +29,8 @@ export const routes: Routes = [
     {path:"ex_cpPai2",component:CpPai2},
     {path:"cp_agrupador",component:CpAgrupador},
     {path:"product_card",component:ProductCard},
-    {path:"product_list",component:ProductList}
-
+    {path:"product_list",component:ProductList},
+    {path:"estoque",component:EstoqueComponent},
+    {path:"app-item-registration",component:ItemRegistrationComponent},
+    {path:"app-item-list",component:ItemListComponent}
 ];

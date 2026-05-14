@@ -1,0 +1,41 @@
+@import 'bootstrap/scss/bootstrap';
+
+.cartao-cadastro {
+  @extend .card, .shadow-sm, .border-0;
+
+  .cabecalho {
+    @extend .card-header, .bg-primary, .text-white;
+    
+    h2 {
+      @extend .h5, .mb-0;
+    }
+  }
+
+  .corpo {
+    @extend .card-body;
+  }
+
+  .formulario {
+    @extend .row, .g-3, .align-items-end;
+
+    label {
+      @extend .form-label, .fw-bold;
+    }
+    
+    input {
+      @extend .form-control;
+    }
+
+    .campo-nome {
+      @extend .col-md-6;
+    }
+
+    .campo-quantidade {
+      @extend .col-md-4;
+    }
+
+    .acao-botao button {
+      @extend .btn, .btn-success, .w-100;
+    }
+  }
+}

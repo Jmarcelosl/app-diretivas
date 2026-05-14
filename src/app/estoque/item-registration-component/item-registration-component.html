@@ -1,0 +1,25 @@
+<div class="cartao-cadastro">
+  <div class="cabecalho">
+    <h2>Cadastrar Novo Item</h2>
+  </div>
+  
+  <div class="corpo">
+    <div class="formulario">
+      
+      <div class="campo-nome">
+        <label for="nomeItem">Nome do Item:</label>
+        <input type="text" id="nomeItem" [(ngModel)]="nomeItem" placeholder="Ex: Monitor 24 pol">
+      </div>
+      
+      <div class="campo-quantidade">
+        <label for="qtdItem">Quantidade Inicial:</label>
+        <input type="number" id="qtdItem" [(ngModel)]="quantidadeInicial" min="0">
+      </div>
+      
+      <div class="acao-botao">
+        <button (click)="cadastrar()">Cadastrar</button>
+      </div>
+      
+    </div>
+  </div>
+</div>

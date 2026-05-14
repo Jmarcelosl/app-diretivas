@@ -1,0 +1,64 @@
+@import 'bootstrap/scss/bootstrap';
+
+.cartao-lista {
+  @extend .card, .shadow-sm, .border-0;
+
+  .cabecalho {
+    @extend .card-header, .bg-dark, .text-white;
+    
+    h2 {
+      @extend .h5, .mb-0;
+    }
+  }
+
+  .corpo {
+    @extend .card-body, .p-0;
+  }
+
+  .tabela-itens {
+    @extend .table, .table-striped, .table-hover, .align-middle, .mb-0;
+
+    thead {
+      @extend .table-light;
+    }
+
+    .col-nome { @extend .ps-4; }
+    .col-quantidade { @extend .text-center; }
+    .col-acoes { @extend .text-end, .pe-4; }
+
+    .celula-nome {
+      @extend .ps-4, .fw-medium;
+    }
+
+    .celula-quantidade {
+      @extend .text-center;
+
+      .quantidade-badge {
+        @extend .badge, .bg-info, .text-dark, .px-3, .py-2, .fs-6;
+        cursor: pointer;
+        transition: opacity 0.2s;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+
+      .input-edicao {
+        @extend .form-control, .form-control-sm, .text-center, .mx-auto;
+        max-width: 100px;
+      }
+    }
+
+    .celula-acoes {
+      @extend .text-end, .pe-4;
+
+      .btn-excluir {
+        @extend .btn, .btn-outline-danger, .btn-sm;
+      }
+    }
+  }
+
+  .mensagem-vazia {
+    @extend .alert, .alert-warning, .m-4, .text-center;
+  }
+}

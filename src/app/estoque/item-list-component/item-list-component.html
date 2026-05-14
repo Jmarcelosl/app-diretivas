@@ -1,0 +1,52 @@
+<div class="cartao-lista">
+  <div class="cabecalho">
+    <h2>Estoque Atual</h2>
+  </div>
+
+  <div class="corpo">
+    <table class="tabela-itens" *ngIf="itens.length > 0; else semItens">
+      <thead>
+        <tr>
+          <th class="col-nome">Nome do Item</th>
+          <th class="col-quantidade">Quantidade em Estoque</th>
+          <th class="col-acoes">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of itens">
+          <td class="celula-nome">{{ item.nome }}</td>
+          
+          <td class="celula-quantidade">
+            <span 
+              *ngIf="itemEditandoId !== item.id" 
+              (click)="habilitarEdicao(item)" 
+              class="quantidade-badge"
+              title="Clique para editar e aperte ENTER para salvar">
+              {{ item.quantidade }} <small>✎</small>
+            </span>
+
+            <input 
+              *ngIf="itemEditandoId === item.id" 
+              type="number" 
+              class="input-edicao"
+              [(ngModel)]="quantidadeTemporaria" 
+              (keyup.enter)="salvarQuantidade(item.id)"
+              (blur)="salvarQuantidade(item.id)"
+              min="0"
+              autofocus>
+          </td>
+
+          <td class="celula-acoes">
+            <button (click)="excluir(item.id)" class="btn-excluir">Excluir</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <ng-template #semItens>
+      <div class="mensagem-vazia">
+        Nenhum item cadastrado no estoque ainda. Utilize o formulário acima para adicionar o primeiro item!
+      </div>
+    </ng-template>
+  </div>
+</div>
