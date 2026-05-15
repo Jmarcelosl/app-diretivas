@@ -1,25 +1,19 @@
-<div class="cartao-cadastro">
-  <div class="cabecalho">
-    <h2>Cadastrar Novo Item</h2>
+<div class="card shadow-sm">
+  <div class="card-header bg-light">
+    <h2 class="h5 mb-0 py-1 text-secondary">Cadastrar Novo Item</h2>
   </div>
   
-  <div class="corpo">
-    <div class="formulario">
-      
-      <div class="campo-nome">
-        <label for="nomeItem">Nome do Item:</label>
-        <input type="text" id="nomeItem" [(ngModel)]="nomeItem" placeholder="Ex: Monitor 24 pol">
-      </div>
-      
-      <div class="campo-quantidade">
-        <label for="qtdItem">Quantidade Inicial:</label>
-        <input type="number" id="qtdItem" [(ngModel)]="quantidadeInicial" min="0">
-      </div>
-      
-      <div class="acao-botao">
-        <button (click)="cadastrar()">Cadastrar</button>
-      </div>
-      
+  <div class="card-body">
+    <div class="mb-3">
+      <label for="nomeItem" class="form-label fw-semibold">Nome do Item:</label>
+      <input type="text" id="nomeItem" class="form-control" [(ngModel)]="nomeItem" placeholder="Ex: Dorflex MAX 500mg">
     </div>
+    
+    <div class="mb-3">
+      <label for="qtdItem" class="form-label fw-semibold">Quantidade:</label>
+      <input type="number" id="qtdItem" class="form-control" [(ngModel)]="quantidadeInicial" min="0">
+    </div>
+    
+    <button (click)="cadastrar()" class="btn btn-primary w-100 fw-bold">Cadastrar</button>
   </div>
 </div>

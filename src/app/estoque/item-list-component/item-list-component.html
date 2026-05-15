@@ -1,51 +1,55 @@
-<div class="cartao-lista">
-  <div class="cabecalho">
-    <h2>Estoque Atual</h2>
+<div class="card shadow-sm">
+  <div class="card-header bg-light">
+    <h2 class="h5 mb-0 py-1 text-secondary">Estoque Atual</h2>
   </div>
 
-  <div class="corpo">
-    <table class="tabela-itens" *ngIf="itens.length > 0; else semItens">
-      <thead>
-        <tr>
-          <th class="col-nome">Nome do Item</th>
-          <th class="col-quantidade">Quantidade em Estoque</th>
-          <th class="col-acoes">Ações</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of itens">
-          <td class="celula-nome">{{ item.nome }}</td>
-          
-          <td class="celula-quantidade">
-            <span 
-              *ngIf="itemEditandoId !== item.id" 
-              (click)="habilitarEdicao(item)" 
-              class="quantidade-badge"
-              title="Clique para editar e aperte ENTER para salvar">
-              {{ item.quantidade }} <small>✎</small>
-            </span>
+  <div class="card-body p-0">
+    <div class="table-responsive" *ngIf="itens.length > 0; else semItens">
+      <table class="table table-hover table-striped mb-0">
+        <thead class="table-light">
+          <tr>
+            <th class="ps-4">Nome do Item</th>
+            <th class="text-center">Quantidade</th>
+            <th class="text-center pe-4">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of itens">
+            <td class="align-middle ps-4">{{ item.nome }}</td>
+            
+            <td class="align-middle text-center">
+              <span 
+                *ngIf="itemEditandoId !== item.id" 
+                (click)="habilitarEdicao(item)" 
+                class="badge bg-info text-white p-2"
+                style="cursor: pointer;"
+                title="Clique para editar">
+                {{ item.quantidade }} <small class="ms-1">✎</small>
+              </span>
 
-            <input 
-              *ngIf="itemEditandoId === item.id" 
-              type="number" 
-              class="input-edicao"
-              [(ngModel)]="quantidadeTemporaria" 
-              (keyup.enter)="salvarQuantidade(item.id)"
-              (blur)="salvarQuantidade(item.id)"
-              min="0"
-              autofocus>
-          </td>
+              <input 
+                *ngIf="itemEditandoId === item.id" 
+                type="number" 
+                class="form-control form-control-sm d-inline-block"
+                style="width: 80px;"
+                [(ngModel)]="quantidadeTemporaria" 
+                (keyup.enter)="salvarQuantidade(item.id)"
+                (blur)="salvarQuantidade(item.id)"
+                min="0"
+                autofocus>
+            </td>
 
-          <td class="celula-acoes">
-            <button (click)="excluir(item.id)" class="btn-excluir">Excluir</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+            <td class="align-middle text-center pe-4">
+              <button (click)="excluir(item.id)" class="btn btn-outline-danger btn-sm">Excluir</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
     <ng-template #semItens>
-      <div class="mensagem-vazia">
-        Nenhum item cadastrado no estoque ainda. Utilize o formulário acima para adicionar o primeiro item!
+      <div class="alert alert-warning m-3 text-center" role="alert">
+        Nenhum item cadastrado no estoque ainda. Utilize o formulário acima!
       </div>
     </ng-template>
   </div>

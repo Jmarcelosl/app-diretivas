@@ -8,15 +8,14 @@ export interface Item {
 }
 
 @Injectable({
-  providedIn: 'root' // Isso garante que o serviço é um Singleton (uma única instância para toda a aplicação)
+  providedIn: 'root' 
 })
 export class ItemService {
   private itens: Item[] = [];
   
-  // O BehaviorSubject guarda o estado atual e emite para quem se inscrever
+  
   private itensSubject = new BehaviorSubject<Item[]>([]);
   
-  // O Observable público que os componentes vão escutar (apenas leitura)
   itens$ = this.itensSubject.asObservable();
   
   private nextId = 1;
@@ -43,7 +42,6 @@ export class ItemService {
   }
 
   private atualizarEstado(): void {
-    // Emite uma nova cópia do array atualizado para todos os inscritos
     this.itensSubject.next([...this.itens]);
   }
 }

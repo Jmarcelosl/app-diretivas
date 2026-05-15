@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { ItemRegistrationComponent } from "../item-registration-component/item-registration-component";
-import { ItemListComponent } from "../item-list-component/item-list-component";
+import { EstoqueModule } from '../estoque-module';
 
 @Component({
   selector: 'app-estoque',
-  standalone: true, // Se estiver a usar standalone
-  imports: [ItemRegistrationComponent, ItemListComponent], // Adicione isto
+  standalone: true, // Mantemos true para o Router funcionar
+  imports: [EstoqueModule], // Importamos o módulo que construímos
   templateUrl: './estoque-component.html',
   styleUrls: ['./estoque-component.scss']
 })
